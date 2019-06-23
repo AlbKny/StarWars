@@ -1,4 +1,6 @@
 <?php
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CharacterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,3 +16,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+Route::get('/characters', 'CharacterController@showAll');
+Route::get('/fillTable', 'CharacterController@fillTable');
+Route::get('/characterDetail', 'CharacterController@searchCharacter');
+Route::post('/characterInfoJson', 'CharacterController@characterJson');
