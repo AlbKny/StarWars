@@ -87,8 +87,8 @@
     <div class="background">
         <div class="content">
             <div>
-                <a class="navi" href="/StarWars/public/characters"> postacie</a>
-                <a class="navi" href="/StarWars/public/fillTable"> wypelnij tabele</a>
+                <a class="navi" href="characters"> postacie</a>
+                <a class="navi" href="fillTable"> wypelnij tabele</a>
             </div>
         </div>
     </div>

@@ -20,4 +20,5 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/characters', 'CharacterController@showAll');
 Route::get('/fillTable', 'CharacterController@fillTable');
-Route::post('/characters/{post}', 'CharacterController@searchCharacter');
+Route::get('/characterDetail', 'CharacterController@searchCharacter');
+Route::post('/characterInfoJson', 'CharacterController@characterJson');

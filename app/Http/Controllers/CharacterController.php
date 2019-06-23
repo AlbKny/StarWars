@@ -7,6 +7,7 @@ use App\Character;
 use function Opis\Closure\serialize;
 use Carbon\Carbon;
 use Mockery\CountValidator\Exception;
+use Illuminate\Support\Facades\Input;
 
 class CharacterController extends Controller
 {
@@ -51,9 +52,17 @@ class CharacterController extends Controller
                 ->with('message', $exeMessage);
         }
     }
-    public function searchCharacter($charName)
+    public function characterJson(Request $request)
     {
-        $character = Character::find($charName);
-        return view('characterDetail') - with('character', $character);
+        $searchedChar = $request->char_name;
+        $character = Character::where('name', 'LIKE', '%' . $searchedChar . '%')->first();
+        return response()->json($character);
+    }
+    public function searchCharacter(Request $request)
+    {
+        return view('charsearch');
+        // $searchedChar = $request->char_name;
+        // $character = Character::where('name', 'LIKE', '%' . $searchedChar . '%')->first();
+        // return response()->json($character);
     }
 }
