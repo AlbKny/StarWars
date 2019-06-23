@@ -61,8 +61,5 @@ class CharacterController extends Controller
     public function searchCharacter(Request $request)
     {
         return view('charsearch');
-        // $searchedChar = $request->char_name;
-        // $character = Character::where('name', 'LIKE', '%' . $searchedChar . '%')->first();
-        // return response()->json($character);
     }
 }
